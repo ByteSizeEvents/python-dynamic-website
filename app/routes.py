@@ -1,4 +1,4 @@
-from app import app
+from app import app, database
 from flask import render_template
 from datetime import datetime
 
@@ -15,5 +15,6 @@ def user():
 
 @app.route('/<path:link>')
 def shortened_link(link):
-	link_details = {"href": "https://twitter.com/ByteSizeEvents", "endpoint": link}
+	print(f"Link requested is '{link}'")
+	link_details = database.fetch_link(str(link))
 	return render_template("link.html", link_details=link_details, motto="Make links shrink", site_name="ByteSize Link Shrinker")
