@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>{{ motto }} | {{ site_name }}</title>
+    </head>
+    <body>
+        <h1>Hello, {{ user.username }}!</h1>
+
+        <p>You'd like to create a short URL link. Great!</p>
+
+
+        <form action="/user/create" method="POST">
+            <label for="fname">Link name:</label><br>
+            <input type="text" id="link_name" name="link_name"><br>
+            <label for="lname">Link URL:</label><br>
+            <input type="text" id="link_href" name="link_href"><br><br>
+            <input type="submit" value="Submit">
+        </form> 
+    </body>
+</html>
